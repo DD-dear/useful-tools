@@ -1,0 +1,207 @@
+/* 设置界面 */
+.setting-item {
+    margin-bottom: 20px;
+}
+
+.setting-item label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+    font-size: 16px;
+}
+
+.theme-selector {
+    display: flex;
+    gap: 15px;
+}
+
+.theme-option {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.theme-option:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.theme-option.active {
+    border-color: #667eea;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.theme-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.theme-option span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+}
+
+.theme-option.active span {
+    color: #667eea;
+    font-weight: 600;
+}
+
+/* 深色模式样式 */
+body.dark-mode {
+    background-color: #1a1a2e;
+    color: #e4e4e7;
+}
+
+body.dark-mode .page {
+    background-color: #1a1a2e;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #e4e4e7;
+}
+
+body.dark-mode .course-item {
+    background: #2d2d42;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .course-content h3 {
+    color: #e4e4e7;
+}
+
+body.dark-mode .course-content p {
+    color: #a0a0a0;
+}
+
+body.dark-mode .timetable {
+    background: #2d2d42;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .timetable th {
+    background: #3d3d5c;
+    color: #e4e4e7;
+    border-color: #4d4d6c;
+}
+
+body.dark-mode .timetable td {
+    border-color: #4d4d6c;
+    color: #e4e4e7;
+}
+
+body.dark-mode .class-card {
+    background: #3d3d5c;
+    color: #e4e4e7;
+}
+
+body.dark-mode .week-tag {
+    background: #667eea;
+    color: white;
+}
+
+body.dark-mode #bottom-nav {
+    background: linear-gradient(135deg, #2d2d42 0%, #1a1a2e 100%);
+    border-top-color: #4d4d6c;
+}
+
+body.dark-mode .nav-btn {
+    color: #a0a0a0;
+}
+
+body.dark-mode .nav-btn.active {
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.15);
+}
+
+body.dark-mode input,
+body.dark-mode select {
+    background: #2d2d42;
+    border-color: #4d4d6c;
+    color: #e4e4e7;
+}
+
+body.dark-mode input:focus,
+body.dark-mode select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.25);
+}
+
+body.dark-mode .toggle-btn {
+    background: #2d2d42;
+    border-color: #4d4d6c;
+    color: #e4e4e7;
+}
+
+body.dark-mode .toggle-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+body.dark-mode .zoom-btn {
+    background: #2d2d42;
+    border-color: #4d4d6c;
+    color: #e4e4e7;
+}
+
+body.dark-mode .zoom-btn:hover {
+    background: #667eea;
+    color: white;
+}
+
+body.dark-mode .setting-item label {
+    color: #e4e4e7;
+}
+
+body.dark-mode .theme-option {
+    background: #2d2d42;
+    border-color: #4d4d6c;
+}
+
+body.dark-mode .theme-option:hover {
+    border-color: #667eea;
+}
+
+body.dark-mode .theme-option.active {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+}
+
+body.dark-mode .theme-option span {
+    color: #a0a0a0;
+}
+
+body.dark-mode .theme-option.active span {
+    color: #667eea;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    /* 底部导航栏移动端优化 */
+    body.dark-mode #bottom-nav {
+        padding: 6px 0 16px;
+    }
+
+    body.dark-mode .nav-btn {
+        padding: 8px 6px;
+        font-size: 13px;
+        min-height: 32px;
+        margin: 0 2px;
+    }
+
+    body.dark-mode .nav-btn.active::after {
+        width: 16px;
+        height: 2px;
+    }
+}

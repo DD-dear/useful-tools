@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上课提醒应用</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme_styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 课程展示界面 -->
+        <div id="course-list" class="page active">
+            <div id="date-display">
+                <h2 id="current-date"></h2>
+                <p id="current-weekday"></p>
+                <p id="week-info"></p>
+            </div>
+            <div id="view-toggle">
+                <button id="view-today" class="toggle-btn active">今日课表</button>
+                <button id="view-full" class="toggle-btn">完整课表</button>
+            </div>
+            <div id="zoom-controls" class="zoom-controls">
+                <button id="zoom-out" class="zoom-btn">−</button>
+                <span id="zoom-level" class="zoom-level">100%</span>
+                <button id="zoom-in" class="zoom-btn">+</button>
+            </div>
+            <h1 id="page-title">今日课程</h1>
+            <div id="courses">
+                <!-- 课程项将在这里动态添加 -->
+            </div>
+        </div>
+
+
+        <!-- 课程添加/编辑界面 -->
+        <div id="course-form" class="page">
+            <h1 id="form-title">添加课程</h1>
+            <form id="courseForm">
+                <div class="form-group">
+                    <label for="courseName">课程名称：</label>
+                    <input type="text" id="courseName" required placeholder="请输入课程名称">
+                </div>
+
+                <div class="form-group">
+                    <label for="courseLocation">上课地点：</label>
+                    <input type="text" id="courseLocation" required placeholder="请输入上课地点">
+                </div>
+
+                <div class="form-group">
+                    <label for="weekday">星期：</label>
+                    <select id="weekday" required>
+                        <option value="">请选择星期</option>
+                        <option value="1">星期一</option>
+                        <option value="2">星期二</option>
+                        <option value="3">星期三</option>
+                        <option value="4">星期四</option>
+                        <option value="5">星期五</option>
+                        <option value="6">星期六</option>
+                        <option value="7">星期日</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="period">上课节次：</label>
+                    <select id="period" required>
+                        <option value="">请选择节次</option>
+                        <option value="上午1-2节">上午1-2节</option>
+                        <option value="上午3-4节">上午3-4节</option>
+                        <option value="下午5-6节">下午5-6节</option>
+                        <option value="下午7-8节">下午7-8节</option>
+                        <option value="晚上9-10节">晚上9-10节</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="weekType">周次类型：</label>
+                    <select id="weekType" required>
+                        <option value="">请选择周次类型</option>
+                        <option value="all">全周</option>
+                        <option value="odd">单周</option>
+                        <option value="even">双周</option>
+                    </select>
+                </div>
+
+                <div class="form-group week-range-group">
+                    <label>周数范围：</label>
+                    <div class="week-range-inputs">
+                        <input type="number" id="startWeek" min="1" max="20" placeholder="起始周" required>
+                        <span>至</span>
+                        <input type="number" id="endWeek" min="1" max="20" placeholder="结束周" required>
+                        <span>周</span>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submitBtn">添加课程</button>
+                    <button type="button" id="deleteBtn" style="display: none;">删除课程</button>
+                    <button type="button" id="cancelBtn">取消</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- 设置界面 -->
+        <div id="settings" class="page">
+            <h1>设置</h1>
+            <div class="setting-item">
+                <label for="theme">主题模式</label>
+                <div class="theme-selector">
+                    <div class="theme-option" data-theme="light">
+                        <div class="theme-icon">☀️</div>
+                        <span>浅色模式</span>
+                    </div>
+                    <div class="theme-option" data-theme="dark">
+                        <div class="theme-icon">🌙</div>
+                        <span>深色模式</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部导航栏 -->
+        <nav id="bottom-nav">
+            <button id="nav-list" class="nav-btn active">课程</button>
+            <button id="nav-add" class="nav-btn">添加</button>
+            <button id="nav-settings" class="nav-btn">设置</button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>
